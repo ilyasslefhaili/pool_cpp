@@ -10,7 +10,7 @@ SRCS = *.cpp
 all :
 		$(CC) $(CFLAGS) $(SRCS) -o  $(NAME)
 
-fclean : clean
+fclean :
 		rm -rf $(NAME)
 
 re : fclean all

@@ -11,15 +11,51 @@
 /* ************************************************************************** */
 #ifndef PHONEBOOK_HPP
 # define PHONEBOOK_HPP
+#include <iostream>
+#include <string>
 
-class PhoneBook
+class  contact
 {
-private:
-    
 public:
-    PhoneBook(/* args */);
-    ~PhoneBook();
+        std::string FirstName;
+        std::string LastName;
+        std::string NickName;
+        std::string PhoneNumber;
+        std::string Darkestsecret;
+};
+
+class PhoneBook{
+    private:
+            contact			contact[8];
+			
+    public:
+            void add() 
+            {
+				static int		a;
+				int		oldestOne;
+				std::string	buff;
+
+				if (a >= 8 && a < 16)
+					oldestOne = a - 8;
+				else if (a == 16)
+				{
+					a = 0;
+					std::cout<<"ldld"<<std::endl;
+					oldestOne = a;
+				}
+				else
+					oldestOne = a;
+				std::cout<<"enter the first name : ";
+				std::cin>>buff;
+				contact[oldestOne].FirstName = buff;
+				int i = 0;
+				while (i < 8)
+				{
+					std::cout<<contact[i].FirstName<<std::endl;
+					i++;
+				}
+				a++;
+            }
 };
 
 #endif
-
