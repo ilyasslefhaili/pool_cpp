@@ -17,20 +17,19 @@
 class  contact
 {
 public:
-        std::string FirstName;
-        std::string LastName;
-        std::string NickName;
-        std::string PhoneNumber;
-        std::string Darkestsecret;
+		std::string FirstName;
+		std::string LastName;
+		std::string NickName;
+		std::string PhoneNumber;
+		std::string Darkestsecret;
 };
 
 class PhoneBook{
     private:
             contact			contact[8];
-			
-    public:
-            void add() 
-            {
+	public:
+		void add() 
+			{
 				static int		a;
 				int		oldestOne;
 				std::string	buff;
@@ -48,14 +47,30 @@ class PhoneBook{
 				std::cout<<"enter the first name : ";
 				std::cin>>buff;
 				contact[oldestOne].FirstName = buff;
+				std::cout<<"enter the last name : ";
+				std::cin>>buff;
+				contact[oldestOne].LastName = buff;
+				std::cout<<"enter the nickname : ";
+				std::cin>>buff;
+				contact[oldestOne].NickName = buff;
+				std::cout<<"enter the phone number : ";
+				std::cin>>buff;
+				contact[oldestOne].PhoneNumber = buff;
+				std::cout<<"enter the darket secret: ";
+				std::cin>>buff;
+				contact[oldestOne].Darkestsecret = buff;
 				int i = 0;
 				while (i < 8)
 				{
 					std::cout<<contact[i].FirstName<<std::endl;
+					std::cout<<contact[i].LastName<<std::endl;
+					std::cout<<contact[i].PhoneNumber<<std::endl;
+					std::cout<<contact[i].NickName<<std::endl;
+					std::cout<<contact[i].Darkestsecret<<std::endl;
 					i++;
 				}
 				a++;
-            }
+			}
 };
 
 #endif
