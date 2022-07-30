@@ -27,7 +27,12 @@ public:
 class PhoneBook{
     private:
             contact			contact[8];
+			int				len;
 	public:
+		PhoneBook()
+		{
+			len =  0;
+		}
 		void add() 
 			{
 				static int		a;
@@ -39,37 +44,42 @@ class PhoneBook{
 				else if (a == 16)
 				{
 					a = 0;
-					std::cout<<"ldld"<<std::endl;
 					oldestOne = a;
 				}
 				else
+				{
+					len += 1;
 					oldestOne = a;
+				}
 				std::cout<<"enter the first name : ";
-				std::cin>>buff;
+				std::getline(std::cin, buff);
 				contact[oldestOne].FirstName = buff;
 				std::cout<<"enter the last name : ";
-				std::cin>>buff;
+				std::getline(std::cin, buff);
 				contact[oldestOne].LastName = buff;
 				std::cout<<"enter the nickname : ";
-				std::cin>>buff;
+				std::getline(std::cin, buff);
 				contact[oldestOne].NickName = buff;
 				std::cout<<"enter the phone number : ";
-				std::cin>>buff;
+				std::getline(std::cin, buff);
 				contact[oldestOne].PhoneNumber = buff;
 				std::cout<<"enter the darket secret: ";
-				std::cin>>buff;
+				std::getline(std::cin, buff);
 				contact[oldestOne].Darkestsecret = buff;
-				int i = 0;
-				while (i < 8)
-				{
-					std::cout<<contact[i].FirstName<<std::endl;
-					std::cout<<contact[i].LastName<<std::endl;
-					std::cout<<contact[i].PhoneNumber<<std::endl;
-					std::cout<<contact[i].NickName<<std::endl;
-					std::cout<<contact[i].Darkestsecret<<std::endl;
-					i++;
-				}
 				a++;
+			}
+			void search()
+			{
+				int j = 0;
+
+				while (j < len)
+				{
+					std::cout<<j<<" |";
+					std::cout<<contact[j].FirstName<<" |";
+					std::cout<<contact[j].LastName<<" |";
+					std::cout<<contact[j].NickName<<std::endl;
+					j++;
+				}
 			}
 };
 

@@ -19,9 +19,13 @@ int main()
     while (1)
     {
         std::cout<<"enter the command : ";
-        std::cin>>buff;
+        std::getline(std::cin, buff);
         if (buff == "ADD")
             phoneB.add();
+        else if (buff == "EXIT")
+            break;
+        else if (buff == "SEARCH")
+            phoneB.search();
     }
 
 }
